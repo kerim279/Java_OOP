@@ -1,49 +1,35 @@
-public class Student extends Person_Class{
+public class Student extends UniversityPerson{
     private String studentId;
     private String major;
 
-    public Student(String name, String email, int birthYear, String studentId, String major){
-        super(name, email, birthYear);
+    public Student(String name, int birthYear, String studentId, String major){
+        super(name, birthYear);
         this.studentId = studentId;
         this.major = major;
     }
 
-    public void setStudentId(String studentId){
-        this.studentId = studentId;
-    }
-
-    public String getStudentId(){
+    public String getStudentId() {
         return studentId;
     }
 
-    public void setMajor(String major){
-        this.major = major;
+    public void setStudentId(String studentId) {
+        this.studentId = studentId;
     }
 
-    public String getMajor(){
+    public String getMajor() {
         return major;
     }
 
-    @Override
-    public String getInfo(){
-        return super.getInfo() + ", Student ID: " + studentId + ", Major: " + major;
+    public void setMajor(String major) {
+        this.major = major;
     }
 
-    public static void main(String[] args) {
-        Student ibrahim = new Student("Ibrahim", "ibrahim@google.com", 2000, "S158823", "Software Engeneering");
-        ibrahim.getName();
-        ibrahim.getEmail();
-        ibrahim.getBirthYear();
-        ibrahim.setStudentId("S5988231");
+    @Override
+    public String getRole(){
+        return "Student";
+    }
 
-        System.out.println("Name:" + ibrahim.getName());
-        System.out.println("Email: " + ibrahim.getEmail());
-        System.out.println("Year of birth: " + ibrahim.getBirthYear());
-        System.out.println(ibrahim.studentId);
-
-
-        int currentYear = 2025;
-        System.out.println("Age: " + ibrahim.getAge(currentYear));
-
+    public String getStudentInfo(){
+        return getName() + " studies " + major;
     }
 }
